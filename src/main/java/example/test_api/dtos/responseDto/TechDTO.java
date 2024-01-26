@@ -10,5 +10,4 @@ import lombok.*;
 public class TechDTO {
     private Long id;
     private String name;
-
 }

@@ -1,5 +1,6 @@
 package example.test_api.entities;
 
+import example.test_api.dtos.responseDto.TechDTO;
 import example.test_api.dtos.responseDto.TestDTO;
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,13 +16,13 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @ManyToOne
+    @ManyToOne()
     private Tech tech;
     public TestDTO toDTO(){
-        return new TestDTO(this.id,this.title,this.tech);
+        return new TestDTO(this.id,this.title, this.tech.toDTO());
     }
 
-    public void setTech(Integer techId) {
+    public void setTech(TechDTO techId) {
     }
 
     public void setTech(Tech tech) {

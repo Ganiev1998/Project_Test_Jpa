@@ -38,7 +38,9 @@ public class TestServiceimpl implements TestService {
     public TestDTO insert(TestReauestDTO testReauestDTO) {
         Test test = new Test();
         test.setTitle(testReauestDTO.getTitle());
-        Tech tech = techRepository.getReferenceById(testReauestDTO.getTech_id());
+        Tech tech = new Tech();
+        tech.setId(testReauestDTO.getTech_id().getId());
+        tech.setName(testReauestDTO.getTech_id().getName());
         test.setTech(tech);
         Test test1 = testRepository.save(test);
         return test1.toDTO();
@@ -53,7 +55,8 @@ public class TestServiceimpl implements TestService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public String delete(Integer id) {
         testRepository.deleteById(Long.valueOf(id));
+        return "deleted";
     }
 }

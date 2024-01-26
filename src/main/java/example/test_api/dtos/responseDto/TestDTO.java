@@ -10,5 +10,6 @@ import lombok.*;
 public class TestDTO {
     private Long id;
     private String title;
-    private Tech tech;
+    private TechDTO tech;
+
 }

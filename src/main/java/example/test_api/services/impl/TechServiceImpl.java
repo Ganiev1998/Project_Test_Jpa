@@ -25,7 +25,7 @@ public class TechServiceImpl implements TechService {
 
     @Override
     public TechDTO getById(Integer id) {
-        return techRepository.getReferenceById(id).toDTO();
+        return techRepository.getReferenceById(Long.valueOf(id)).toDTO();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class TechServiceImpl implements TechService {
 
     @Override
     public TechDTO update(Integer id, TechRequestDTO techRequestDTO) {
-        Tech tech = techRepository.getReferenceById(id);
+        Tech tech = techRepository.getReferenceById(Long.valueOf(id));
         tech.setName(techRequestDTO.getName());
         return techRepository.save(tech).toDTO();
     }

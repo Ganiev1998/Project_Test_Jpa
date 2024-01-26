@@ -10,5 +10,5 @@ public interface TestService {
     List<TestDTO> getAll();
     TestDTO insert(TestReauestDTO testReauestDTO);
     TestDTO update(Integer id,TestReauestDTO testReauestDTO);
-    void delete(Integer id);
+    String delete(Integer id);
 }

@@ -10,6 +10,6 @@ import lombok.*;
 @NoArgsConstructor
 public class TestReauestDTO {
     private String title;
-    private Integer tech_id;
+    private TechDTO tech_id;
 
 }

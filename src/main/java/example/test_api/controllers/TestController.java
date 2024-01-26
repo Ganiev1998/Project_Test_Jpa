@@ -26,11 +26,11 @@ public class TestController {
     public TestDTO create(@RequestBody TestReauestDTO testReauestDTO){
          return testService.insert(testReauestDTO);
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public TestDTO update(@PathVariable Integer id,@RequestBody TestReauestDTO testReauestDTO){
         return testService.update(id,testReauestDTO);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id){
         testService.delete(id);
     }
